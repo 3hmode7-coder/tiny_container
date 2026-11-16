@@ -21,8 +21,8 @@
         android:label="@string/tc4_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TinyContainer">
-
+        android:theme="@style/Theme.TinyContainer"
+        >
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
@@ -34,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
             <!-- Import files to public folder (any format) -->
             <intent-filter android:label="@string/tc4_import_file_label">
                 <action android:name="android.intent.action.SEND" />
@@ -42,7 +43,7 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
 
-            <!-- ShortcutManager -->
+            <!-- ShortcutManager 快捷方式启动 -->
             <intent-filter>
                 <action android:name="com.fct.tc4.action.SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -68,7 +69,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- Merge with the Termux:X11 library activity so its display stays portrait. -->
+        <!-- Keep the bundled Termux:X11 display in portrait orientation. -->
         <activity
             android:name="com.termux.x11.MainActivity"
             android:screenOrientation="portrait"
@@ -85,4 +86,5 @@
             </intent-filter>
         </provider>
     </application>
+
 </manifest>

@@ -141,7 +141,9 @@ class ContainerMainFragment : Fragment() {
                             }
                             val uri = uriBuilder.build()
                             val profile = VncUri(uri.toString()).toServerProfile().apply {
-                                resizeRemoteDesktop = event.adaptToScreenSize
+                                // Request a remote framebuffer matching the AVNC viewport dimensions.
+                                // This fits the Linux desktop to the available viewer area.
+                                resizeRemoteDesktop = true
                                 resizeRemoteDesktopScaleFactor = 4F.pow(event.scaleRatio.toFloat())
                             }
                             val intent = createVncIntent(requireContext(), profile)

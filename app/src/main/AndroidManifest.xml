@@ -68,6 +68,12 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <!-- Merge with the Termux:X11 library activity so its display stays portrait. -->
+        <activity
+            android:name="com.termux.x11.MainActivity"
+            android:screenOrientation="portrait"
+            tools:node="merge" />
+
         <provider
             android:name=".ui.misc.TinyDocumentsProvider"
             android:authorities="${applicationId}.docs"
